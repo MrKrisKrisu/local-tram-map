@@ -24,6 +24,7 @@ export default {
     });
     this.initLayers();
     this.initMap();
+    this.locate();
   },
   computed: {
     iconSt1() {
@@ -61,6 +62,9 @@ export default {
         popupAnchor: [0, -10],
         shadowUrl: null,
       });
+    },
+    locate() {
+      map.locate({setView: true, maxZoom: 16});
     },
     initLayers() {
       layerControl = L.control.layers(layers['switches']).addTo(map).expand();
