@@ -29,7 +29,7 @@ export default {
   computed: {
     iconSt1() {
       return L.icon({
-        iconUrl: './icons/st1.svg',
+        iconUrl: require('./assets/icons/st1.svg'),
         iconSize: [20, 20],
         iconAnchor: [10, 10],
         popupAnchor: [0, -10],
@@ -38,7 +38,7 @@ export default {
     },
     iconSt2() {
       return L.icon({
-        iconUrl: './icons/st2.svg',
+        iconUrl: require('./assets/icons/st2.svg'),
         iconSize: [20, 20],
         iconAnchor: [10, 10],
         popupAnchor: [0, -10],
@@ -56,7 +56,7 @@ export default {
       }
 
       return L.icon({
-        iconUrl: './icons/dot-' + color + '.svg',
+        iconUrl: require('./assets/icons/dot-' + color + '.svg'),
         iconSize: [15, 15],
         iconAnchor: [10, 10],
         popupAnchor: [0, -10],
