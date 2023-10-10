@@ -282,7 +282,7 @@ export default {
                   journey.currentTripPosition.longitude
                 ]);
               } else {
-                let popup = '<b>' + journey.line.name + ' > ' + journey.provenance + '</b><br>';
+                let popup = '<b>' + journey.line.name + '</b><br>';
                 if (journey.delay) {
                   popup += '<span class="text-danger">+' + Math.round(journey.delay / 60) + ' min</span><br>';
                 }
