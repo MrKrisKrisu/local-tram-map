@@ -6,6 +6,7 @@
 
 <script>
 import L from 'leaflet';
+import moment from 'moment';
 
 let map;
 let layerControl;
@@ -13,6 +14,20 @@ let switches = {};
 let st1 = {};
 let st2 = {};
 let layers = {};
+let journeys = {};
+
+let stations = [
+  '721456', // Untermühlstr.
+  '401003', // Karlsruhe Marktplatz Kaiserstraße
+  '364807', // Karlsruhe Tullastraße
+  '8079045', // Karlsruhe Albtalbahnhof
+  '401011', // Karlsruhe Marktplatz Pyramide
+  '8079126', // Karlsruhe Entenfang
+  '375031', // Karlsruhe Europaplatz oben
+  '723606', // Karlsruhe Durlacher Tor oben
+  '723109', // Mörsch BachWest
+  '721352', // Spöck Richard-Hecht-Schule, Stutensee
+];
 
 export default {
   name: 'App',
@@ -63,6 +78,13 @@ export default {
         shadowUrl: null,
       });
     },
+    getJourneyIcon() {
+      return L.divIcon({
+        html: '<i class="fa-solid fa-train" style="line-height: 24px; font-size: 20px;"></i>',
+        iconSize: [24, 24],
+        backgroundColor: 'transparent',
+      });
+    },
     locate() {
       map.locate({setView: true, maxZoom: 16});
     },
@@ -91,21 +113,19 @@ export default {
       layerControl.addOverlay(layers['st1'], "Signalkontakte");
       layers['st2'] = L.layerGroup().addTo(map);
       layerControl.addOverlay(layers['st2'], "Weichenkontakte");
+      layers['journeys'] = L.layerGroup().addTo(map);
+      layerControl.addOverlay(layers['journeys'], "Fahrzeuge");
 
+      this.refreshMap();
+      map.on('dragend', this.refreshMap);
+
+      this.fetchJourneys();
+      setInterval(this.fetchJourneys, 1000);
+    },
+    refreshMap() {
       this.fetchSwitches();
-      map.on('dragend', () => {
-        this.fetchSwitches();
-      });
-
       this.fetchSt1();
-      map.on('dragend', () => {
-        this.fetchSt1();
-      });
-
       this.fetchSt2();
-      map.on('dragend', () => {
-        this.fetchSt2();
-      });
     },
     fetchSt1() {
       const bbox = map.getBounds();
@@ -114,6 +134,9 @@ export default {
       fetch('https://overpass-api.de/api/interpreter?data=' + query)
           .then(response => response.json())
           .then(data => {
+            if (!data.elements) {
+              return;
+            }
             data.elements.forEach(element => {
               if (st1[element.id]) {
                 return;
@@ -241,6 +264,42 @@ export default {
       }
 
       return content;
+    },
+    fetchJourneys() {
+      let stationId = stations.shift();
+      stations.push(stationId);
+
+      fetch('https://v5.db.transport.rest/stops/' + stationId + '/arrivals?duration=60&results=100&when=' + moment().subtract(20, 'minutes').toISOString())
+          .then((response) => response.json())
+          .then((data) => {
+            data.forEach(journey => {
+              if (!journey.currentTripPosition || (journey.line.product !== 'suburban' && journey.line.product !== 'tram')) {
+                return;
+              }
+              if (journeys[journey.tripId]) {
+                journeys[journey.tripId].setLatLng([
+                  journey.currentTripPosition.latitude,
+                  journey.currentTripPosition.longitude
+                ]);
+              } else {
+                let popup = '<b>' + journey.line.name + ' > ' + journey.provenance + '</b><br>';
+                if (journey.delay) {
+                  popup += '<span class="text-danger">+' + Math.round(journey.delay / 60) + ' min</span><br>';
+                }
+                if (journey.line.fahrtNr && journey.line.fahrtNr !== '0') {
+                  popup += '<span class="text-info">Zugnummer: ' + journey.line.fahrtNr + '</span><br>';
+                }
+                popup += '<hr /><small>*Standort wird aus den Fahrplan-/Livedaten aus HAFAS berechnet. Die Position kann daher von der tatsächlichen Position abweichen.</small>';
+
+                journeys[journey.tripId] = L.marker([
+                  journey.currentTripPosition.latitude,
+                  journey.currentTripPosition.longitude
+                ], {icon: this.getJourneyIcon()})
+                    .addTo(layers['journeys'])
+                    .bindPopup(popup);
+              }
+            });
+          });
     }
   }
 }
@@ -270,5 +329,10 @@ body {
 
 .text-center {
   text-align: center;
+}
+
+.leaflet-div-icon {
+  background-color: transparent;
+  border-color: transparent
 }
 </style>
