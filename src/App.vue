@@ -120,6 +120,7 @@ export default {
               }
               st1[element.id] = L.marker([element.lat, element.lon])
                   .addTo(layers['st1'])
+                  .bindPopup(this.getPopupContentForSt1(element))
                   .setIcon(this.iconSt1);
             });
           });
@@ -196,6 +197,36 @@ export default {
       }
 
       content += '</p>';
+
+      if (element.tags?.['description']) {
+        content += '<i>' + element.tags['description'] + '</i><br />';
+      }
+
+      if (element.tags?.['note']) {
+        content += '<i>' + element.tags['note'] + '</i><br />';
+      }
+
+      if (element.tags?.['fixme']) {
+        content += '<hr /><i><b class="text-danger"><i class="fa-regular fa-circle-question"></i> ' + element.tags['fixme'] + '</b></i><br />';
+      }
+
+      return content;
+    },
+    getPopupContentForSt1(element) {
+      let content = '<h3>Signalkontakt ' + (element.tags?.ref ?? '') + '</h3>';
+
+
+      if (element.tags?.['railway:signal:states']) {
+        content += '<b><i class="fa-regular fa-hand-point-up"></i> Ansteuerung:</b><br/>';
+
+        let states = element.tags['railway:signal:states'].split(';');
+        states.forEach(state => {
+          state = state.replace('left', '<i class="fa-solid fa-left-long"></i> links');
+          state = state.replace('right', '<i class="fa-solid fa-right-long"></i> rechts');
+          state = state.replace('straight', '<i class="fa-solid fa-arrow-up"></i> geradeaus');
+          content += '<span>' + state + '</span><br />';
+        });
+      }
 
       if (element.tags?.['description']) {
         content += '<i>' + element.tags['description'] + '</i><br />';
