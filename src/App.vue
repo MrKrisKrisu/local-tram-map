@@ -7,6 +7,7 @@
 <script>
 import L from 'leaflet';
 import moment from 'moment';
+import LineColor from "@/components/LineColor.vue";
 
 let map;
 let layerControl;
@@ -88,9 +89,11 @@ export default {
         shadowUrl: null,
       });
     },
-    getJourneyIcon() {
+    getJourneyIcon(journey) {
+      let color = LineColor.methods.getColor(journey);
+
       return L.divIcon({
-        html: '<i class="fa-solid fa-train" style="line-height: 24px; font-size: 20px;"></i>',
+        html: '<i class="fa-solid fa-train" style="line-height: 24px; font-size: 20px; color: ' + color + '"></i>',
         iconSize: [24, 24],
         backgroundColor: 'transparent',
       });
@@ -283,7 +286,6 @@ export default {
     getPopupContentForSt1(element) {
       let content = '<h3>Signalkontakt ' + (element.tags?.ref ?? '') + '</h3>';
 
-
       if (element.tags?.['railway:signal:states']) {
         content += '<b><i class="fa-regular fa-hand-point-up"></i> Ansteuerung:</b><br/>';
 
@@ -339,7 +341,7 @@ export default {
                 journeys[journey.tripId] = L.marker([
                   journey.currentTripPosition.latitude,
                   journey.currentTripPosition.longitude
-                ], {icon: this.getJourneyIcon()})
+                ], {icon: this.getJourneyIcon(journey)})
                     .addTo(layers['journeys'])
                     .bindPopup(popup);
               }
