@@ -13,6 +13,7 @@ let layerControl;
 let switches = {};
 let st1 = {};
 let st2 = {};
+let sh7 = {};
 let layers = {};
 let journeys = {};
 
@@ -42,6 +43,15 @@ export default {
     this.locate();
   },
   computed: {
+    iconSh7() {
+      return L.icon({
+        iconUrl: require('./assets/icons/sh7.png'),
+        iconSize: [15, 23],
+        iconAnchor: [10, 10],
+        popupAnchor: [0, -10],
+        shadowUrl: null,
+      });
+    },
     iconSt1() {
       return L.icon({
         iconUrl: require('./assets/icons/st1.svg'),
@@ -115,6 +125,8 @@ export default {
       layerControl.addOverlay(layers['st2'], "Weichenkontakte");
       layers['journeys'] = L.layerGroup().addTo(map);
       layerControl.addOverlay(layers['journeys'], "Fahrzeuge");
+      layers['sh7'] = L.layerGroup().addTo(map);
+      layerControl.addOverlay(layers['sh7'], "Standanforderungen");
 
       this.refreshMap();
       map.on('dragend', this.refreshMap);
@@ -126,11 +138,44 @@ export default {
       this.fetchSwitches();
       this.fetchSt1();
       this.fetchSt2();
+      this.fetchSh7();
+    },
+    fetchSh7() {
+      const bbox = map.getBounds();
+      let bboxString = bbox._southWest.lat + ',' + bbox._southWest.lng + ',' + bbox._northEast.lat + ',' + bbox._northEast.lng;
+      const query = encodeURIComponent('[out:json][timeout:25];(node["railway:signal:switch"="DE-BOStrab:st1"]["railway:signal:stop"="DE-BOStrab:sh7"]["operator"~"Verkehrs"](') + bboxString + encodeURIComponent('););out body;>;out skel qt;');
+      fetch('https://overpass-api.de/api/interpreter?data=' + query)
+          .then(response => response.json())
+          .then(data => {
+            if (!data.elements) {
+              return;
+            }
+            data.elements.forEach(element => {
+              if (sh7[element.id]) {
+                return;
+              }
+              let popup = '<h3>Standanforderung</h3>';
+              if (element.tags?.['railway:signal:states']) {
+                let states = element.tags['railway:signal:states'].split(';');
+                states.forEach(state => {
+                  state = state.replace('left', '<i class="fa-solid fa-left-long"></i> links');
+                  state = state.replace('right', '<i class="fa-solid fa-right-long"></i> rechts');
+                  state = state.replace('straight', '<i class="fa-solid fa-arrow-up"></i> geradeaus');
+                  popup += '<span>' + state + '</span><br />';
+                });
+              }
+
+              sh7[element.id] = L.marker([element.lat, element.lon])
+                  .addTo(layers['sh7'])
+                  .bindPopup(popup)
+                  .setIcon(this.iconSh7);
+            });
+          });
     },
     fetchSt1() {
       const bbox = map.getBounds();
       let bboxString = bbox._southWest.lat + ',' + bbox._southWest.lng + ',' + bbox._northEast.lat + ',' + bbox._northEast.lng;
-      const query = encodeURIComponent('[out:json][timeout:25];(node["railway:signal:switch"="DE-BOStrab:st1"]["operator"~"Verkehrsbetriebe"](') + bboxString + encodeURIComponent('););out body;>;out skel qt;');
+      const query = encodeURIComponent('[out:json][timeout:25];(node["railway:signal:switch"="DE-BOStrab:st1"][!"railway:signal:stop"]["operator"~"Verkehrs"](') + bboxString + encodeURIComponent('););out body;>;out skel qt;');
       fetch('https://overpass-api.de/api/interpreter?data=' + query)
           .then(response => response.json())
           .then(data => {
@@ -151,7 +196,7 @@ export default {
     fetchSt2() {
       const bbox = map.getBounds();
       let bboxString = bbox._southWest.lat + ',' + bbox._southWest.lng + ',' + bbox._northEast.lat + ',' + bbox._northEast.lng;
-      const query = encodeURIComponent('[out:json][timeout:25];(node["railway:signal:switch"="DE-BOStrab:st2"]["operator"~"Verkehrsbetriebe"](') + bboxString + encodeURIComponent('););out body;>;out skel qt;');
+      const query = encodeURIComponent('[out:json][timeout:25];(node["railway:signal:switch"="DE-BOStrab:st2"]["operator"~"Verkehrs"](') + bboxString + encodeURIComponent('););out body;>;out skel qt;');
       fetch('https://overpass-api.de/api/interpreter?data=' + query)
           .then(response => response.json())
           .then(data => {
@@ -168,7 +213,7 @@ export default {
     fetchSwitches() {
       const bbox = map.getBounds();
       let bboxString = bbox._southWest.lat + ',' + bbox._southWest.lng + ',' + bbox._northEast.lat + ',' + bbox._northEast.lng;
-      const query = encodeURIComponent('[out:json][timeout:25];(node["railway"="switch"]["operator"~"Verkehrsbetriebe"](') + bboxString + encodeURIComponent('););out body;>;out skel qt;');
+      const query = encodeURIComponent('[out:json][timeout:25];(node["railway"="switch"]["operator"~"Verkehrs"](') + bboxString + encodeURIComponent('););out body;>;out skel qt;');
       fetch('https://overpass-api.de/api/interpreter?data=' + query)
           .then(response => response.json())
           .then(data => {
