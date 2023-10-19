@@ -1,6 +1,7 @@
 <template>
   <div class="px-4 py-5 my-5 text-center">
     <h1 class="display-5 fw-bold text-body-emphasis text-primary">Haltestellenquiz</h1>
+    <small>Ohne Schullinien und S12</small>
 
     <hr/>
     <h3>{{ this.currentStopName }}</h3>
@@ -30,7 +31,6 @@
         Überspringen & Nächste Station
       </button>
     </div>
-
   </div>
 </template>
 

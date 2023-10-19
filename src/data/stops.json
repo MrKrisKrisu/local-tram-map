@@ -46,8 +46,7 @@
       "S5",
       "S51",
       "S1",
-      "S11",
-      "S12"
+      "S11"
     ]
   },
   {
@@ -61,8 +60,7 @@
       "S5",
       "S51",
       "S1",
-      "S11",
-      "S12"
+      "S11"
     ]
   },
   {
@@ -495,7 +493,7 @@
   {
     "name": "Händelstraße, Karlsruhe",
     "lines": [
-      "S12",
+      
       3,
       "S2",
       "S5",
@@ -551,7 +549,7 @@
   {
     "name": "Karlsruhe Entenfang",
     "lines": [
-      "S12",
+      
       3,
       "S2",
       "S5",
@@ -581,8 +579,7 @@
       4,
       5,
       2,
-      3,
-      "S12"
+      3
     ]
   },
   {
@@ -639,8 +636,7 @@
   {
     "name": "Kolpingplatz, Karlsruhe",
     "lines": [
-      3,
-      "S12"
+      3
     ]
   },
   {
@@ -666,8 +662,7 @@
     "lines": [
       "S5",
       "S51",
-      5,
-      "S12"
+      5
     ]
   },
   {
@@ -781,7 +776,7 @@
   {
     "name": "Philippstraße, Karlsruhe",
     "lines": [
-      "S12",
+      
       3,
       "S2",
       "S5",
@@ -949,7 +944,6 @@
     "name": "Yorckstraße, Karlsruhe",
     "lines": [
       2,
-      "S12",
       3,
       "S2",
       "S5",
