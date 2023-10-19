@@ -66,14 +66,19 @@
     ]
   },
   {
-    "name": "Marktplatz (Kaiserstraße U), Karlsruhe",
+    "name": "Marktplatz, Karlsruhe",
     "lines": [
       "S2",
       "S5",
       "S51",
       "S1",
       "S11",
-      1
+      1,
+      "S52",
+      "S4",
+      "S7",
+      "S8",
+      2
     ]
   },
   {
