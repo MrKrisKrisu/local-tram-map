@@ -9,10 +9,14 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.2",
+    "bootstrap": "^5.3.2",
     "core-js": "^3.8.3",
+    "hafas-client": "^6.1.1",
     "leaflet": "^1.9.4",
     "moment": "^2.29.4",
-    "vue": "^3.2.13"
+    "notyf": "^3.10.0",
+    "vue": "^3.2.13",
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

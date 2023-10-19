@@ -1,0 +1,964 @@
+[
+  {
+    "name": "Neureut Heide, Karlsruhe",
+    "lines": [
+      1
+    ]
+  },
+  {
+    "name": "Heidehof, Karlsruhe",
+    "lines": [
+      1
+    ]
+  },
+  {
+    "name": "Duale Hochschule, Karlsruhe",
+    "lines": [
+      1
+    ]
+  },
+  {
+    "name": "Lilienthalstraße, Karlsruhe",
+    "lines": [
+      1
+    ]
+  },
+  {
+    "name": "Synagoge, Karlsruhe",
+    "lines": [
+      1
+    ]
+  },
+  {
+    "name": "Kunstakademie/Hochschule, Karlsruhe",
+    "lines": [
+      1
+    ]
+  },
+  {
+    "name": "Mühlburger Tor, Karlsruhe",
+    "lines": [
+      1,
+      2,
+      3,
+      4,
+      "S2",
+      "S5",
+      "S51",
+      "S1",
+      "S11",
+      "S12"
+    ]
+  },
+  {
+    "name": "Europaplatz/Postgalerie, Karlsruhe",
+    "lines": [
+      1,
+      2,
+      3,
+      4,
+      "S2",
+      "S5",
+      "S51",
+      "S1",
+      "S11",
+      "S12"
+    ]
+  },
+  {
+    "name": "Marktplatz (Kaiserstraße U), Karlsruhe",
+    "lines": [
+      "S2",
+      "S5",
+      "S51",
+      "S1",
+      "S11",
+      1
+    ]
+  },
+  {
+    "name": "Kronenplatz, Karlsruhe",
+    "lines": [
+      "S2",
+      "S5",
+      "S51",
+      "S4",
+      1,
+      2,
+      3,
+      "S7",
+      "S8"
+    ]
+  },
+  {
+    "name": "Durlacher Tor/KIT-Campus Süd, Karlsruhe",
+    "lines": [
+      1,
+      2,
+      3,
+      4,
+      "S2",
+      "S5",
+      "S51",
+      "S4",
+      "S7",
+      "S8"
+    ]
+  },
+  {
+    "name": "Gottesauer Platz/BGV, Karlsruhe",
+    "lines": [
+      1,
+      2,
+      "S2",
+      "S5",
+      "S51",
+      "S4",
+      "S7",
+      "S8"
+    ]
+  },
+  {
+    "name": "Tullastraße/Alter Schlachthof, Karlsruhe",
+    "lines": [
+      1,
+      2,
+      5,
+      "S2",
+      "S5",
+      "S51",
+      "S4",
+      "S7",
+      "S8"
+    ]
+  },
+  {
+    "name": "Weinweg, Karlsruhe",
+    "lines": [
+      1,
+      2,
+      5,
+      "S5",
+      "S51",
+      "S4"
+    ]
+  },
+  {
+    "name": "Durlach Untermühlstraße, Karlsruhe",
+    "lines": [
+      1,
+      2,
+      5,
+      "S5",
+      "S51",
+      "S4"
+    ]
+  },
+  {
+    "name": "Durlach Auer Straße/Dr.Willmar Schwabe, Karlsruhe",
+    "lines": [
+      1,
+      2
+    ]
+  },
+  {
+    "name": "Durlach Friedrichschule, Karlsruhe",
+    "lines": [
+      1,
+      8
+    ]
+  },
+  {
+    "name": "Durlach Schlossplatz, Karlsruhe",
+    "lines": [
+      1,
+      8
+    ]
+  },
+  {
+    "name": "Durlach Turmberg, Karlsruhe",
+    "lines": [
+      1,
+      8
+    ]
+  },
+  {
+    "name": "Arbeitsagentur, Karlsruhe",
+    "lines": [
+      2
+    ]
+  },
+  {
+    "name": "Augartenstraße, Karlsruhe",
+    "lines": [
+      "S52",
+      "S4",
+      "S7",
+      "S8",
+      "S1",
+      "S11",
+      2
+    ]
+  },
+  {
+    "name": "Bannwaldallee, Karlsruhe",
+    "lines": [
+      4
+    ]
+  },
+  {
+    "name": "Barbarossaplatz, Karlsruhe",
+    "lines": [
+      2
+    ]
+  },
+  {
+    "name": "Blankenloch Kirche, Stutensee",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Blankenloch Mühlenweg, Stutensee",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Blankenloch Nord, Stutensee",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Blankenloch Süd, Stutensee",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Blankenloch Tolna-Platz, Stutensee",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Büchig, Stutensee",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Daxlanden Altrheinbrücke, Karlsruhe",
+    "lines": [
+      3
+    ]
+  },
+  {
+    "name": "Daxlanden Ankerstraße, Karlsruhe",
+    "lines": [
+      3
+    ]
+  },
+  {
+    "name": "Daxlanden Dornröschenweg, Karlsruhe",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Daxlanden Hammweg, Karlsruhe",
+    "lines": [
+      3
+    ]
+  },
+  {
+    "name": "Daxlanden Karl-Delisle-Straße, Karlsruhe",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Daxlanden Kirchplatz, Karlsruhe",
+    "lines": [
+      3
+    ]
+  },
+  {
+    "name": "Daxlanden Mauerweg, Karlsruhe",
+    "lines": [
+      3
+    ]
+  },
+  {
+    "name": "Daxlanden Nussbaumweg, Karlsruhe",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Daxlanden Rappenwört, Karlsruhe",
+    "lines": [
+      3
+    ]
+  },
+  {
+    "name": "Daxlanden Thomas-Mann-Straße, Karlsruhe",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Daxlanden Waidweg, Karlsruhe",
+    "lines": [
+      3
+    ]
+  },
+  {
+    "name": "Dunantstraße, Karlsruhe",
+    "lines": [
+      3
+    ]
+  },
+  {
+    "name": "Durlach Ellmendinger Straße, Karlsruhe",
+    "lines": [
+      2,
+      8
+    ]
+  },
+  {
+    "name": "Durlach Gritznerstraße, Karlsruhe",
+    "lines": [
+      2,
+      8
+    ]
+  },
+  {
+    "name": "Durlach Killisfeldstraße, Karlsruhe",
+    "lines": [
+      2,
+      8
+    ]
+  },
+  {
+    "name": "Durlach Ostmarkstraße, Karlsruhe",
+    "lines": [
+      2,
+      8
+    ]
+  },
+  {
+    "name": "Durlach Schlesier Straße West, Karlsruhe",
+    "lines": [
+      2,
+      8
+    ]
+  },
+  {
+    "name": "Durlach Steiermärker Straße, Karlsruhe",
+    "lines": [
+      2,
+      8
+    ]
+  },
+  {
+    "name": "Durlach Zündhütle, Karlsruhe",
+    "lines": [
+      2,
+      8
+    ]
+  },
+  {
+    "name": "Ebertstraße, Karlsruhe",
+    "lines": [
+      2,
+      3
+    ]
+  },
+  {
+    "name": "Eckenerstraße, Karlsruhe",
+    "lines": [
+      3,
+      "S2"
+    ]
+  },
+  {
+    "name": "Ettlinger Tor/Staatstheater, Karlsruhe",
+    "lines": [
+      4,
+      5,
+      "S52",
+      "S4",
+      "S7",
+      "S8",
+      "S1",
+      "S11",
+      2
+    ]
+  },
+  {
+    "name": "Europahalle/Europabad, Karlsruhe",
+    "lines": [
+      4
+    ]
+  },
+  {
+    "name": "Feierabendweg, Karlsruhe",
+    "lines": [
+      2
+    ]
+  },
+  {
+    "name": "Forchheim Hallenbad, Rheinstetten",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Forchheim Hauptstraße, Rheinstetten",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Forchheim Leichtsandstr./Messe Karlsruhe, Rheinstetten",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Forchheim Oberfeldstraße, Rheinstetten",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Friedrichstal Mitte, Stutensee",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Friedrichstal Nord, Stutensee",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Friedrichstal Saint-Riquier-Platz, Stutensee",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Hagsfeld Bahnhof, Karlsruhe",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Hagsfeld Fächerbad, Karlsruhe",
+    "lines": [
+      4
+    ]
+  },
+  {
+    "name": "Hagsfeld Geroldsäcker, Karlsruhe",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Hagsfeld Jenaer Straße, Karlsruhe",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Hagsfeld Reitschulschlag, Karlsruhe",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Hagsfeld Süd, Karlsruhe",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Händelstraße, Karlsruhe",
+    "lines": [
+      "S12",
+      3,
+      "S2",
+      "S5",
+      "S51"
+    ]
+  },
+  {
+    "name": "Hardecksiedlung, Karlsruhe",
+    "lines": [
+      4
+    ]
+  },
+  {
+    "name": "Hauptfriedhof, Karlsruhe",
+    "lines": [
+      3,
+      4
+    ]
+  },
+  {
+    "name": "Hertzstraße, Karlsruhe",
+    "lines": [
+      2
+    ]
+  },
+  {
+    "name": "Hirtenweg/Technologiepark, Karlsruhe",
+    "lines": [
+      4,
+      "S2"
+    ]
+  },
+  {
+    "name": "Karl-Wilhelm-Platz, Karlsruhe",
+    "lines": [
+      3,
+      4
+    ]
+  },
+  {
+    "name": "Karlsruhe Bahnhofsvorplatz",
+    "lines": [
+      "S52",
+      "S4",
+      "S7",
+      "S8",
+      "S1",
+      "S11",
+      2,
+      3
+    ]
+  },
+  {
+    "name": "Karlsruhe Entenfang",
+    "lines": [
+      "S12",
+      3,
+      "S2",
+      "S5",
+      "S51",
+      5
+    ]
+  },
+  {
+    "name": "Karlsruhe-Durlach",
+    "lines": [
+      5,
+      "S5",
+      "S51",
+      "S4"
+    ]
+  },
+  {
+    "name": "Karlsruhe-Kniel. Rheinbergstr.",
+    "lines": [
+      "S5",
+      "S51"
+    ]
+  },
+  {
+    "name": "Karlstor/Bundesgerichtshof, Karlsruhe",
+    "lines": [
+      4,
+      5,
+      2,
+      3,
+      "S12"
+    ]
+  },
+  {
+    "name": "Knielingen Eggensteiner Straße, Karlsruhe",
+    "lines": [
+      "S5",
+      "S51"
+    ]
+  },
+  {
+    "name": "Knielingen Egon-Eiermann-Allee, Karlsruhe",
+    "lines": [
+      2
+    ]
+  },
+  {
+    "name": "Knielingen Herweghstraße, Karlsruhe",
+    "lines": [
+      "S5",
+      "S51"
+    ]
+  },
+  {
+    "name": "Knielingen Nord, Karlsruhe",
+    "lines": [
+      2
+    ]
+  },
+  {
+    "name": "Knielingen Pionierstraße, Karlsruhe",
+    "lines": [
+      2
+    ]
+  },
+  {
+    "name": "Knielingen Siemens, Karlsruhe",
+    "lines": [
+      "S5",
+      "S51"
+    ]
+  },
+  {
+    "name": "Knielingen Siemensallee, Karlsruhe",
+    "lines": [
+      2
+    ]
+  },
+  {
+    "name": "Knielingen Sudetenstraße, Karlsruhe",
+    "lines": [
+      2
+    ]
+  },
+  {
+    "name": "Kolpingplatz, Karlsruhe",
+    "lines": [
+      3,
+      "S12"
+    ]
+  },
+  {
+    "name": "Kongresszentrum, Karlsruhe",
+    "lines": [
+      "S52",
+      "S4",
+      "S7",
+      "S8",
+      "S1",
+      "S11",
+      2
+    ]
+  },
+  {
+    "name": "Kußmaulstraße/Städt. Klinikum, Karlsruhe",
+    "lines": [
+      2
+    ]
+  },
+  {
+    "name": "Lameyplatz, Karlsruhe",
+    "lines": [
+      "S5",
+      "S51",
+      5,
+      "S12"
+    ]
+  },
+  {
+    "name": "Landesbausparkasse, Karlsruhe",
+    "lines": [
+      4
+    ]
+  },
+  {
+    "name": "Mathystraße, Karlsruhe",
+    "lines": [
+      2,
+      3,
+      5
+    ]
+  },
+  {
+    "name": "Moltkestraße/Städt. Klinikum, Karlsruhe",
+    "lines": [
+      2,
+      "S1",
+      "S11"
+    ]
+  },
+  {
+    "name": "Mörsch Am Hang, Rheinstetten",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Mörsch Bach-West, Rheinstetten",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Mörsch Merkurstraße, Rheinstetten",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Mörsch Narzissenstraße, Rheinstetten",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Mörsch Rheinaustraße, Rheinstetten",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Mörsch Römerstraße, Rheinstetten",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Mörsch Rösselsbrünnle, Rheinstetten",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Mühlburg West, Karlsruhe",
+    "lines": [
+      "S5",
+      "S51"
+    ]
+  },
+  {
+    "name": "Neureuter Straße, Karlsruhe",
+    "lines": [
+      2
+    ]
+  },
+  {
+    "name": "Oberreut Albert-Braun-Straße, Karlsruhe",
+    "lines": [
+      4
+    ]
+  },
+  {
+    "name": "Oberreut Badeniaplatz, Karlsruhe",
+    "lines": [
+      4
+    ]
+  },
+  {
+    "name": "Oberreut Wilhelm-Leuschner-Straße, Karlsruhe",
+    "lines": [
+      4
+    ]
+  },
+  {
+    "name": "Oberreut Zentrum, Karlsruhe",
+    "lines": [
+      4
+    ]
+  },
+  {
+    "name": "Otto-Sachs-Straße, Karlsruhe",
+    "lines": [
+      2,
+      5
+    ]
+  },
+  {
+    "name": "Philippstraße, Karlsruhe",
+    "lines": [
+      "S12",
+      3,
+      "S2",
+      "S5",
+      "S51"
+    ]
+  },
+  {
+    "name": "Poststraße, Karlsruhe",
+    "lines": [
+      "S52",
+      "S4",
+      "S7",
+      "S8",
+      "S1",
+      "S11",
+      2,
+      3
+    ]
+  },
+  {
+    "name": "Rheinhafenstraße, Karlsruhe",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Rintheim Forststraße, Karlsruhe",
+    "lines": [
+      3
+    ]
+  },
+  {
+    "name": "Rintheim Sinsheimer Straße, Karlsruhe",
+    "lines": [
+      4,
+      "S2"
+    ]
+  },
+  {
+    "name": "Rintheim, Karlsruhe",
+    "lines": [
+      3
+    ]
+  },
+  {
+    "name": "Rüppurrer Tor, Karlsruhe",
+    "lines": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Schillerstraße, Karlsruhe",
+    "lines": [
+      4
+    ]
+  },
+  {
+    "name": "Sophienstraße, Karlsruhe",
+    "lines": [
+      4
+    ]
+  },
+  {
+    "name": "Spöck Hochhaus, Stutensee",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Spöck Richard-Hecht-Schule, Stutensee",
+    "lines": [
+      "S2"
+    ]
+  },
+  {
+    "name": "Stadtwerke, Karlsruhe",
+    "lines": [
+      3
+    ]
+  },
+  {
+    "name": "Starckstraße, Karlsruhe",
+    "lines": [
+      "S5",
+      "S51"
+    ]
+  },
+  {
+    "name": "Tivoli, Karlsruhe",
+    "lines": [
+      3
+    ]
+  },
+  {
+    "name": "Waldstadt Elbinger Straße Ost, Karlsruhe",
+    "lines": [
+      4
+    ]
+  },
+  {
+    "name": "Waldstadt Europäische Schule, Karlsruhe",
+    "lines": [
+      4
+    ]
+  },
+  {
+    "name": "Waldstadt Glogauer Straße, Karlsruhe",
+    "lines": [
+      4
+    ]
+  },
+  {
+    "name": "Waldstadt Im Eichbäumle, Karlsruhe",
+    "lines": [
+      4
+    ]
+  },
+  {
+    "name": "Waldstadt Jägerhaus, Karlsruhe",
+    "lines": [
+      4
+    ]
+  },
+  {
+    "name": "Waldstadt Osteroder Straße, Karlsruhe",
+    "lines": [
+      4
+    ]
+  },
+  {
+    "name": "Waldstadt Zentrum, Karlsruhe",
+    "lines": [
+      4
+    ]
+  },
+  {
+    "name": "Weinbrennerplatz, Karlsruhe",
+    "lines": [
+      5,
+      4
+    ]
+  },
+  {
+    "name": "Welfenstraße, Karlsruhe",
+    "lines": [
+      2
+    ]
+  },
+  {
+    "name": "Werderstraße, Karlsruhe",
+    "lines": [
+      3
+    ]
+  },
+  {
+    "name": "Wolfartsweier Nord, Karlsruhe",
+    "lines": [
+      2,
+      8
+    ]
+  },
+  {
+    "name": "Yorckstraße, Karlsruhe",
+    "lines": [
+      2,
+      "S12",
+      3,
+      "S2",
+      "S5",
+      "S51",
+      "S1",
+      "S11"
+    ]
+  },
+  {
+    "name": "ZKM, Karlsruhe",
+    "lines": [
+      2
+    ]
+  }
+]
+
+
