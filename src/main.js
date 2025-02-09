@@ -7,13 +7,13 @@ import StationGame from './components/StationGame.vue'
 import * as VueRouter from "vue-router";
 
 const routes = [
-    {path: '/local-tram-map', component: MainDashboard},
-    {path: '/local-tram-map/map', component: LeafletMap},
-    {path: '/local-tram-map/stations', component: StationGame}
+    {path: '/', component: MainDashboard},
+    {path: '/map', component: LeafletMap},
+    {path: '/stations', component: StationGame}
 ]
 
 const router = VueRouter.createRouter({
-    history: VueRouter.createWebHashHistory(),
+    history: VueRouter.createWebHashHistory('/local-tram-map/'),
     routes,
 })
 
