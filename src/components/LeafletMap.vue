@@ -4,7 +4,6 @@
 
 <script>
 import L from 'leaflet';
-import moment from 'moment';
 import LineColor from "@/components/LineColor.vue";
 
 let map;
@@ -14,20 +13,6 @@ let st1 = {};
 let st2 = {};
 let sh7 = {};
 let layers = {};
-let journeys = {};
-
-let stations = [
-  '721456', // Untermühlstr.
-  '401003', // Karlsruhe Marktplatz Kaiserstraße
-  '364807', // Karlsruhe Tullastraße
-  '8079045', // Karlsruhe Albtalbahnhof
-  '401011', // Karlsruhe Marktplatz Pyramide
-  '8079126', // Karlsruhe Entenfang
-  '375031', // Karlsruhe Europaplatz oben
-  '723606', // Karlsruhe Durlacher Tor oben
-  '723109', // Mörsch BachWest
-  '721352', // Spöck Richard-Hecht-Schule, Stutensee
-];
 
 export default {
   name: 'LeafletMap',
@@ -130,9 +115,6 @@ export default {
 
       this.refreshMap();
       map.on('dragend', this.refreshMap);
-
-      this.fetchJourneys();
-      setInterval(this.fetchJourneys, 1000);
     },
     refreshMap() {
       this.fetchSwitches();
@@ -308,42 +290,6 @@ export default {
       }
 
       return content;
-    },
-    fetchJourneys() {
-      let stationId = stations.shift();
-      stations.push(stationId);
-
-      fetch('https://v5.db.transport.rest/stops/' + stationId + '/arrivals?duration=60&results=100&when=' + moment().subtract(20, 'minutes').toISOString())
-          .then((response) => response.json())
-          .then((data) => {
-            data.forEach(journey => {
-              if (!journey.currentTripPosition || (journey.line.product !== 'suburban' && journey.line.product !== 'tram')) {
-                return;
-              }
-              if (journeys[journey.tripId]) {
-                journeys[journey.tripId].setLatLng([
-                  journey.currentTripPosition.latitude,
-                  journey.currentTripPosition.longitude
-                ]);
-              } else {
-                let popup = '<b>' + journey.line.name + '</b><br>';
-                if (journey.delay) {
-                  popup += '<span class="text-danger">+' + Math.round(journey.delay / 60) + ' min</span><br>';
-                }
-                if (journey.line.fahrtNr && journey.line.fahrtNr !== '0') {
-                  popup += '<span class="text-info">Zugnummer: ' + journey.line.fahrtNr + '</span><br>';
-                }
-                popup += '<hr /><small>*Standort wird aus den Fahrplan-/Livedaten aus HAFAS berechnet. Die Position kann daher von der tatsächlichen Position abweichen.</small>';
-
-                journeys[journey.tripId] = L.marker([
-                  journey.currentTripPosition.latitude,
-                  journey.currentTripPosition.longitude
-                ], {icon: this.getJourneyIcon(journey)})
-                    .addTo(layers['journeys'])
-                    .bindPopup(popup);
-              }
-            });
-          });
     }
   }
 }
